@@ -1,0 +1,15 @@
+<!-- templates/add_playlist.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Add Playlist</h2>
+  <form method="POST" action="{{ url_for('add_playlist') }}">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name() }}
+    <br>
+    {{ form.description.label }} {{ form.description() }} <!-- Add the description field -->
+    <br>
+    {{ form.submit() }}
+  </form>
+{% endblock %}
